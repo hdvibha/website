@@ -6,8 +6,106 @@
   <title>Resume - Vibha HD</title>
   <link rel="stylesheet" href="styles.css">
   <script src="script.js" defer></script>
+  <style>
+    /* Global Styling */
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      background: linear-gradient(135deg, #f9f9f9, #e0f7fa);
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #00796b;
+      padding: 1rem 2rem;
+      color: white;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .navbar .logo {
+      font-size: 1.6rem;
+      font-weight: bold;
+    }
+    .navbar nav a {
+      color: white;
+      margin-left: 15px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+    .navbar nav a:hover,
+    .navbar nav a.active {
+      color: #ffeb3b;
+      border-bottom: 2px solid #ffeb3b;
+      padding-bottom: 3px;
+    }
+
+    /* Container */
+    .container {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    /* Card Styling */
+    .card {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+      margin: 1.5rem 0;
+      padding: 1.5rem;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    }
+    h2 {
+      color: #00796b;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    ul {
+      margin-left: 1rem;
+      text-align: left;
+    }
+
+    /* Accordion */
+    .accordion .acc-btn {
+      cursor: pointer;
+      margin: 0;
+    }
+    .accordion .acc-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease-out;
+      padding-left: 1rem;
+    }
+    .accordion.active .acc-content {
+      max-height: 500px; /* enough space */
+      transition: max-height 0.6s ease-in;
+    }
+
+    /* Footer */
+    footer {
+      background: #00796b;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+      font-size: 0.9rem;
+      margin-top: 2rem;
+    }
+  </style>
 </head>
 <body>
+  <!-- Navbar -->
   <header class="navbar">
     <h1 class="logo">Resume</h1>
     <nav>
@@ -17,14 +115,18 @@
     </nav>
   </header>
 
+  <!-- Main Content -->
   <main class="container">
+
+    <!-- Profile -->
     <div class="card">
-      <h2>Profile 💡</h2>
+      <h2>💡 Profile</h2>
       <p>Motivated Computer Science student skilled in C, C++, Java, and problem-solving. Organized and eager to apply my skills in real projects.</p>
     </div>
 
+    <!-- Education -->
     <div class="card">
-      <h2>Education 🎓</h2>
+      <h2>🎓 Education</h2>
       <ul>
         <li><strong>B.E. Computer Science</strong> — VCET (Ongoing)</li>
         <li><strong>PUC</strong> — Vivekananda PU College (2021–2023)</li>
@@ -32,9 +134,9 @@
       </ul>
     </div>
 
-    <!-- Accordion for Skills -->
+    <!-- Skills Accordion -->
     <div class="card accordion">
-      <h2 class="acc-btn">Skills ⚡</h2>
+      <h2 class="acc-btn">⚡ Skills</h2>
       <ul class="acc-content">
         <li>C, C++, Java</li>
         <li>MS Excel, PowerPoint</li>
@@ -42,37 +144,13 @@
       </ul>
     </div>
 
+    <!-- Certifications -->
     <div class="card">
-      <h2>Certifications 📜</h2>
+      <h2>📜 Certifications</h2>
       <ul>
         <li>Programming using C++ — Infosys (2024)</li>
         <li>Linux for Beginners — Infosys (2024)</li>
       </ul>
     </div>
 
-    <!-- Accordion for Achievements -->
-    <div class="card accordion">
-      <h2 class="acc-btn">Achievements 🏆</h2>
-      <ul class="acc-content">
-        <li>Secured 1st place in Coding Hackathon (2024)</li>
-        <li>Presented paper on AI at TechFest (2023)</li>
-        <li>Top Performer in Academic Year 2022</li>
-      </ul>
-    </div>
-
-    <!-- Accordion for Workshops -->
-    <div class="card accordion">
-      <h2 class="acc-btn">Workshops 🛠️</h2>
-      <ul class="acc-content">
-        <li>Web Development Bootcamp — 2024</li>
-        <li>AI & Machine Learning Workshop — 2023</li>
-        <li>Cybersecurity Awareness Program — 2022</li>
-      </ul>
-    </div>
-  </main>
-
-  <footer>
-    <p>© 2025 Vibha HD • Crafted with Passion</p>
-  </footer>
-</body>
-</html>
+    <!-- Achievements Accor
