@@ -1,35 +1,29 @@
-// ========= Homepage (index.html) =========
-const showMessageBtn = document.getElementById("showMessage");
-const message = document.getElementById("message");
+// jQuery required (add <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> in HTML head)
 
-if (showMessageBtn) {
-  showMessageBtn.addEventListener("click", () => {
-    if (message.style.display === "none" || message.style.display === "") {
-      message.style.display = "block";
-      message.style.animation = "popIn 0.5s ease-in-out";
-    } else {
-      message.style.display = "none";
+// Smooth scrolling
+$("a[href^='#']").on('click', function(event) {
+  event.preventDefault();
+  $("html, body").animate({
+    scrollTop: $($(this).attr("href")).offset().top
+  }, 800);
+});
+
+// Highlight active navbar link
+$(document).ready(function() {
+  let current = window.location.href;
+  $("nav ul li a").each(function() {
+    if (this.href === current) {
+      $(this).addClass("active");
     }
-  });
-}
-
-// ========= Resume (resume.html) =========
-const accordions = document.querySelectorAll(".accordion");
-
-accordions.forEach(acc => {
-  const btn = acc.querySelector(".acc-btn");
-  btn.addEventListener("click", () => {
-    // Close others when opening one (optional)
-    accordions.forEach(other => {
-      if (other !== acc) {
-        other.classList.remove("active");
-      }
-    });
-
-    // Toggle current accordion
-    acc.classList.toggle("active");
   });
 });
 
-// ========= Bio-data (biodata.html) =========
-// No JS needed, but keeping script.js linked for consistency.
+// Fade-in effect for sections
+$(window).on("scroll", function() {
+  $(".resume section, .biodata section").each(function() {
+    let top = $(this).offset().top - window.innerHeight + 100;
+    if ($(window).scrollTop() > top) {
+      $(this).addClass("visible");
+    }
+  });
+});
