@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume - Vibha HD</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+  .accordion {
+    margin-bottom: 15px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  .accordion-header {
+    background: #2a6ebd;
+    color: #fff;
+    cursor: pointer;
+    padding: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background 0.3s ease;
+  }
+  .accordion-header:hover {
+    background: #1e4f8a;
+  }
+  .accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.3s ease;
+    background: #eef5ff; /* soft blue background instead of white */
+    padding: 0 15px;
+    border-left: 4px solid #2a6ebd; /* blue accent */
+  }
+  .accordion-content.open {
+    padding: 15px;
+  }
+  .accordion-content p, 
+  .accordion-content ul {
+    margin: 15px 0;
+    color: #333; /* darker text for readability */
+  }
+  .accordion-content ul li {
+    margin: 6px 0;
+  }
+</style>
+
+</head>
+<body>
+  <header class="navbar">
+    <h1 class="logo">Resume</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a class="active" href="resume.html">Resume</a>
+      <a href="biodata.html">Bio-data</a>
+    </nav>
+  </header>
+
+  <main class="container">
+
+    <div class="accordion">
+      <div class="accordion-header">💡 Profile</div>
+      <div class="accordion-content">
+        <p>Motivated Computer Science student skilled in C, C++, Java, and problem-solving. Organized and eager to apply my skills in real projects.</p>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <div class="accordion-header">🎓 Education</div>
+      <div class="accordion-content">
+        <ul>
+          <li><strong>B.E. Computer Science</strong> — VCET (Ongoing)</li>
+          <li><strong>PUC</strong> — Vivekananda PU College (2021–2023)</li>
+          <li><strong>Schooling</strong> — Vivekananda English Medium School (2011–2021)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <div class="accordion-header">⚡ Skills</div>
+      <div class="accordion-content">
+        <ul>
+          <li>C, C++, Java</li>
+          <li>MS Excel, PowerPoint</li>
+          <li>File Management, Basic Graphic Design</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <div class="accordion-header">🛠️ Workshops</div>
+      <div class="accordion-content">
+        <ul>
+          <li>To build an AI-Powered App</li>
+          <li>Hands-on session on AI Tools</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <div class="accordion-header">🏆 Achievements</div>
+      <div class="accordion-content">
+        <ul>
+          <li>Participated in Hackathons creating real-world solutions</li>
+          <li>Selected for VTU Ideathon Project</li>
+          <li>Recognized for teamwork & innovation</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <div class="accordion-header">📜 Certifications</div>
+      <div class="accordion-content">
+        <ul>
+          <li>Programming using C++ — Infosys (2024)</li>
+          <li>Linux for Beginners — Infosys (2024)</li>
+        </ul>
+      </div>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>© 2025 Vibha HD • Crafted with Passion</p>
+  </footer>
+
+  <script>
+    const headers = document.querySelectorAll('.accordion-header');
+
+    headers.forEach(header => {
+      header.addEventListener('click', () => {
+        const content = header.nextElementSibling;
+
+        // Close all other accordions
+        document.querySelectorAll('.accordion-content').forEach(c => {
+          if (c !== content) {
+            c.style.maxHeight = "0px";
+            c.classList.remove("open");
+          }
+        });
+
+        // Toggle clicked one
+        if (content.style.maxHeight && content.style.maxHeight !== "0px") {
+          content.style.maxHeight = "0px";
+          content.classList.remove("open");
+        } else {
+          content.style.maxHeight = content.scrollHeight + "px";
+          content.classList.add("open");
+        }
+      });
+    });
+  </script>
+</body>
+</html>
